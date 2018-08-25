@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="block" name="apple-mobile-web-app-status-bar-style">
+    <title>UU手游</title>
+    <script type="text/javascript" >
+        (function(designWidth, maxWidth) {
+            var doc = document,
+                win = window;
+            var docEl = doc.documentElement;
+            var tid;
+            var rootItem,rootStyle;
+
+            function refreshRem() {
+                var width = docEl.getBoundingClientRect().width;
+                if (!maxWidth) {
+                    maxWidth = 540;
+                };
+                if (width > maxWidth) {
+                    width = maxWidth;
+                }
+                //rem换算方法1rem=100px
+                var rem = width * 100 / designWidth;
+                //兼容UC开始
+                rootStyle="html{font-size:"+rem+'px !important}';
+                rootItem = document.getElementById('rootsize') || document.createElement("style");
+                if(!document.getElementById('rootsize')){
+                    document.getElementsByTagName("head")[0].appendChild(rootItem);
+                    rootItem.id='rootsize';
+                }
+                if(rootItem.styleSheet){
+                    rootItem.styleSheet.disabled||(rootItem.styleSheet.cssText=rootStyle)
+                }else{
+                    try{rootItem.innerHTML=rootStyle}catch(f){rootItem.innerText=rootStyle}
+                }
+                //兼容UC结束
+                docEl.style.fontSize = rem + "px";
+            };
+            refreshRem();
+
+            win.addEventListener("resize", function() {
+                clearTimeout(tid); //防止执行两次
+                tid = setTimeout(refreshRem, 300);
+            }, false);
+
+            win.addEventListener("pageshow", function(e) {
+                if (e.persisted) { // 浏览器后退的时候重新计算
+                    clearTimeout(tid);
+                    tid = setTimeout(refreshRem, 300);
+                }
+            }, false);
+
+            if (doc.readyState === "complete") {
+                doc.body.style.fontSize = "16px";
+            } else {
+                doc.addEventListener("DOMContentLoaded", function(e) {
+                    doc.body.style.fontSize = "16px";
+                }, false);
+            }
+        })(640, 640);
+    </script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="clear">
+    <div class="uu-fl uu-fl-l"><img src="./png/phone_shili.png" alt="UU手游" /></div>
+    <div class="uu-fl uu-fl-r">
+        <h2 class="header-title">UU手游</h2>
+        <p class="header-sub-title">手游玩家最直接的选择</p>
+        <p class="header-sub-title">底至3-5折&nbsp;最直接的手游福利</p>
+        <div class="header-link clear">
+            <div class="uu-fl header-link-code">
+                <img src="./png/uu_shouyou_QRcode.png" alt="UU手游" />
+            </div>
+            <div class="uu-fl header-link-btn">
+                <div><a href="" class="header-btn header-link-info">查看详情</a></div>
+                <div><a href="" class="header-btn header-link-down">立即下载</a></div>
+                <div class="header-click-peocount">已有&nbsp;<span>XXXXXX</span>人次下载</div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="section-share">
+    <h2 class="uu-title">独家福利</h2>
+    <div class="clear">
+        <div class="uu-fl section-share-txt">
+            <h3>分享就赚钱</h3>
+            <p>邀请好友下载并注册您可得<span class="red-span">2-20元</span>，您的好友下载并注册，他可得<span class="red-span">3-5元</span>。赶快下载注册开始赚钱吧！无拉新上线,可提现</p>
+        </div>
+        <div class="uu-fl section-share-png">
+            <img src="./png/phone_share.png" alt="UU手游" />
+        </div>
+    </div>
+</div>
+<div class="section-advantage">
+    <h2 class="uu-title">5大优势</h2>
+    <ul>
+        <li class="uu-list-1">每笔充值超低折扣，省钱程度<span class="bolder-span">最省</span></li>
+        <li class="uu-list-2">一秒钟内极速快充，充值速度<span class="bolder-span">最快</span></li>
+        <li class="uu-list-3">全天任意时间充值，实用性<span class="bolder-span">最好</span></li>
+        <li class="uu-list-4">独家超值礼包，福利力度<span class="bolder-span">最大</span></li>
+        <li class="uu-list-5">2万款游戏享折扣，游戏数量<span class="bolder-span">最多</span></li>
+    </ul>
+</div>
+<div class="section-reason">
+    <h2 class="uu-title">选择理由</h2>
+    <div class="clear">
+        <div class="uu-fl">
+            <p class="reason-item-txt">游戏内随时充值，解决游戏充值时间的局限性</p>
+            <h4 class="reason-item-name reason-item-1">24小时随时充值</h4>
+        </div>
+        <div class="uu-fl">
+            <p class="reason-item-txt">充值购买基金卡，每天可以领取大量金币</p>
+            <h4 class="reason-item-name reason-item-2">基金卡充值领金币</h4>
+        </div>
+    </div>
+    <div class="clear">
+        <div class="uu-fl">
+            <p class="reason-item-txt">游戏内随时充值，只需支付原价格折后的金额</p>
+            <h4 class="reason-item-name reason-item-3">游戏充值有折扣</h4>
+        </div>
+        <div class="uu-fl">
+            <p class="reason-item-txt">玩游戏随时都有折扣充值，充值人员全天在线</p>
+            <h4 class="reason-item-name reason-item-4">折扣稳定有保障</h4>
+        </div>
+    </div>
+</div>
+<footer>
+    <div>Copyright&nbsp;&#169;&nbsp;2016-2016&nbsp;<a class="footer-link" href="//www.shouyouzhu.com" target="_blank">www.shouyouzhu.com</a>&nbsp;版权所有</div>
+    <div>增值电信业务经营许可证：豫B2-20160077</div>
+</footer>
+</body>
+</html>

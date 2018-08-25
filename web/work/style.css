@@ -1,0 +1,203 @@
+*{margin:0;padding:0;}
+body{background: #f3f3f3;font-family: Helvetica;font-size: 16px;}
+ul,li,dd,dl{list-style: none;}
+a{text-decoration: none;}
+
+.uu-fl{
+    float: left;
+}
+.uu-title{
+    text-align: center;
+    color: #0099ff;
+}
+.clear{
+    clear: both;
+    overflow: hidden;
+}
+.bolder-span{
+    font-weight: bolder;
+}
+.red-span{
+    color: red;
+}
+header{
+    height: 4rem;
+    padding-top: 0.4rem;
+    background: url("./png/header_bg.png") no-repeat 100% 100%;
+    background-size: 100% 100%;
+}
+header .uu-fl-l{
+    width: 40%;
+    height: 100%;
+}
+header .uu-fl-r{
+    width: 60%;
+    height: 100%;
+}
+header .header-title{
+    color: #FFF;
+    background: url("./png/android_tip.png") no-repeat 1.6rem center;
+    background-size: 0.9rem 0.4rem;
+}
+header .uu-fl-l img{
+    width: 1.9rem;
+    height: 3.2rem;
+    margin-left: 0.6rem;
+}
+header .header-sub-title{
+    margin: 0.1rem 0;
+    color: #FFF;
+    font-size: 0.28rem;
+}
+.header-link .header-link-code{
+    width: 1.38rem;
+    height: 1.35rem;
+    margin-top: 0.1rem;
+}
+.header-link .header-link-code img{
+    width: 1.38rem;
+    height: 1.35rem;
+}
+.header-link .header-link-btn{
+    width: 2.3rem;
+    margin-left: 0.1rem;
+}
+.header-link .header-link-btn .header-click-peocount{
+    margin-top: 0.1rem;
+    font-size: 0.12rem;
+    color: #FFF;
+}
+header .header-btn{
+    display: block;
+    width: 1.5rem;
+    height: 0.42rem;
+    margin-top: 0.1rem;
+    text-align: center;
+    line-height: 0.42rem;
+    color: #FFF;
+    border-radius: 0.03rem;
+}
+header .header-btn.header-link-info{
+    background: #ffb400;
+}
+header .header-btn.header-link-down{
+    background: #36dd2a;
+}
+.section-share{
+    padding: 0 0.1rem;
+    height: 5rem;
+    background: url("./png/share_bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.section-share .section-share-txt{
+    width: 4rem;
+}
+.section-share .section-share-txt h3{
+    text-align: center;
+    padding: 0.1rem 0;
+    margin-top: 0.2rem;
+}
+.section-share .section-share-txt p{
+    padding: 0 0.14rem 0 0.6rem;
+}
+.section-share .section-share-png{
+    width: 2.2rem;
+}
+.section-share .section-share-png img{
+    width: 1.9rem;
+    height: 3.7rem;
+}
+.section-advantage{
+    margin-top: 0.2rem;
+}
+.section-advantage ul{
+    padding: 0.1rem 0;
+}
+.section-advantage ul li{
+    text-align: left;
+    padding-left: 1.2rem;
+    line-height: 0.6rem;
+    background-size: 0.17rem 0.19rem !important;
+}
+.section-advantage ul li.uu-list-1{
+    background: url("./png/list_1.png") no-repeat 0.8rem center;
+}
+.section-advantage ul li.uu-list-2{
+    background: url("./png/list_2.png") no-repeat 0.8rem center;
+}
+.section-advantage ul li.uu-list-3{
+    background: url("./png/list_3.png") no-repeat 0.8rem center;
+}
+.section-advantage ul li.uu-list-4{
+    background: url("./png/list_4.png") no-repeat 0.8rem center;
+}
+.section-advantage ul li.uu-list-5{
+    background: url("./png/list_5.png") no-repeat 0.8rem center;
+}
+.section-reason{
+    margin: 0.2rem 0.1rem;
+}
+.section-reason .clear{
+    padding-top: 0.2rem;
+}
+.section-reason .uu-fl{
+    width: 45%;
+    margin: 0 0.15rem;
+    border-radius: 0.03rem;
+    -webkit-border-radius: 0.03rem ;
+    -ms-border-radius: 0.03rem ;
+    -o-border-radius: 0.03rem ;
+}
+.section-reason .uu-fl p{
+    font-size: 0.14rem;
+    padding: 0.11rem;
+    background: #FFF;
+    box-shadow:0 -0.01rem 0.2rem #666;
+    -moz-box-shadow:0 -0.01rem 0.2rem #666;
+    border-top-left-radius: 0.03rem;
+    -webkit-border-top-left-radius: 0.03rem ;
+    -ms-border-top-left-radius: 0.03rem ;
+    -o-border-top-left-radius: 0.03rem ;
+    border-top-right-radius: 0.03rem;
+    -webkit-border-top-right-radius: 0.03rem ;
+    -ms-border-top-right-radius: 0.03rem ;
+    -o-border-top-right-radius: 0.03rem ;
+}
+.section-reason .uu-fl h4.reason-item-name{
+    text-align: center;
+    color: #FFF;
+    font-size: 0.28rem;
+    background-size: 100% 100%;
+    padding: 0.1rem;
+    border-bottom-left-radius: 0.03rem;
+    -webkit-border-bottom-left-radius: 0.03rem ;
+    -ms-border-bottom-left-radius: 0.03rem ;
+    -o-border-bottom-left-radius: 0.03rem ;
+    border-bottom-right-radius: 0.03rem;
+    -webkit-border-bottom-right-radius: 0.03rem ;
+    -ms-border-bottom-right-radius: 0.03rem ;
+    -o-border-bottom-right-radius: 0.03rem ;
+}
+.section-reason .uu-fl h4.reason-item-1{
+    background: url("./png/item1.png") no-repeat;
+}
+.section-reason .uu-fl h4.reason-item-2{
+    background: url("./png/item2.png") no-repeat;
+}
+.section-reason .uu-fl h4.reason-item-3{
+    background: url("./png/item3.png") no-repeat;
+}
+.section-reason .uu-fl h4.reason-item-4{
+    background: url("./png/item4.png") no-repeat;
+}
+footer{
+    font-size: 0.1rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+footer div{
+    margin: 0.1rem 0;
+}
+footer .footer-link{
+    color: #333;
+}
