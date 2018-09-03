@@ -1,0 +1,591 @@
+*{margin:0;padding:0;}
+body{background: #f3f3f3;font-family: Helvetica;font-size: 0.16rem;}
+ul,li,dd,dl{list-style: none;}
+a{
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}
+a.a-link{
+    color: #009eef;
+}
+a.buy-btn{
+    display: block;
+    width: 1.6rem;
+    height: 0.5rem;
+    text-align: center;
+    line-height: 0.5rem;
+    font-size: 0.24rem;
+    border: 0.01rem solid #ff9f04;
+    color: #ff9f04;
+    -webkit-border-radius: 0.05rem;
+    -moz-border-radius: 0.05rem;
+    border-radius: 0.05rem;
+}
+.price{
+    color: #fd5353;
+}
+
+.clear{
+    clear: both;
+    overflow: hidden;
+}
+header{
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    background: #fd5353;
+    color: #FFF;
+    text-align: center;
+    font-size: 0.32rem;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+header .header-back{
+    position: absolute;
+    width: 0.3rem;
+    left: 0.1rem;
+    background: url("./png/goback.png") no-repeat left center;
+    background-size: 0.2rem 0.3rem;
+}
+header .header-mine{
+    position: absolute;
+    right: 0.1rem;
+}
+.sign-in{
+    margin-top: 0.8rem;
+    height: 4.3rem;
+    position: relative;
+}
+.section{
+    margin-top: 0.8rem;
+}
+.sign-in .sign-in-fund{
+    height: 2rem;
+    position: relative;
+    padding-top: 0.5rem;
+    background: url("./png/beijing.png") no-repeat;
+    background-size: 100% 2.5rem;
+}
+.sign-in-yue{
+    position: absolute;
+    height: 0.9rem;
+    font-size: 0.38rem;
+    color: #ffd400;
+    left: 0.6rem;
+    background: url("./png/jinbi.png") no-repeat bottom center;
+    -webkit-background-size: 0.45rem 0.45rem;
+    background-size: 0.45rem 0.45rem;
+}
+.sign-btn{
+    display: block;
+    width: 1.5rem;
+    height: 0.9rem;
+    text-align: right;
+    padding: 0 0.4rem;
+    line-height: 0.9rem;
+    font-size: 0.38rem;
+    color: #FFF;
+    background: #ff9100;
+    border: 0.01rem solid #FFF;
+    -webkit-border-radius: 0.45rem;
+    -moz-border-radius: 0.45rem;
+    border-radius: 0.45rem;
+    margin: 0 auto;
+    position: relative;
+}
+.sign-btn img{
+    width: 0.7rem;
+    height: 0.65rem;
+    position: absolute;
+    left: 0.2rem;
+    top: 0.15rem;
+}
+.sign-strategy{
+    position: absolute;
+    top: 0.35rem;
+    right: 0;
+    width: 1.6rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-indent: 0.3rem;
+    color: #FFF;
+    background: url("./png/jbgl.png") no-repeat;
+    background-size: 1.6rem 0.5rem;
+}
+.sign-in .sign-in-step{
+    width: 99%;
+    height: 2.3rem;
+    background: #FFF;
+    -webkit-border-radius: 0.1rem;
+    -moz-border-radius: 0.1rem;
+    border-radius: 0.1rem;
+    position: absolute;
+    top: 2rem;
+    left: 0.03rem;
+}
+ul.sign-in-steps{
+    position: relative;
+    padding: 0.25rem 0;
+    counter-reset: step;
+    border-bottom: 0.01rem solid #CCC;
+}
+ul.sign-in-steps li{
+    text-align: center;
+    position: relative;
+    float: left;
+    width: 14%;
+    font-size: 0.10rem;
+    color: #fd5353;
+    padding-bottom: 0.35rem;
+    background: url("./png/jinbi.png") no-repeat bottom center;
+    background-size: 0.35rem 0.35rem;
+}
+ul.sign-in-steps li:last-child{
+    width: 15.2%;
+    background: url("./png/baoxiang1.png") no-repeat bottom center;
+    background-size: 0.35rem 0.35rem;
+}
+ul.sign-in-steps li:before{
+    display: block;
+    content: "";
+    background: url("./png/weiqian.png") no-repeat;
+    background-size: 0.32rem 0.32rem;
+    width: 0.32rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    border-radius: 0.32rem;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto 0.08rem auto;
+}
+ul.sign-in-steps .sign-steps-active:before{
+    background: url("./png/qiandao.png") no-repeat;
+    background-size: 0.32rem 0.32rem;
+}
+ul.sign-in-steps li ~ li:after{
+    content: '';
+    width: 70%;
+    height: 0.05rem;
+    background-color: #fd5353;
+    position: absolute;
+    left: -50%;
+    top: 0.15rem;
+    z-index: 1;
+    margin-left: 0.16rem;
+}
+.sign-gift-bag>div{
+    float: left;
+    width: 49.8%;
+    height: 0.8rem;
+    font-size: 0.24rem;
+    line-height: 0.8rem;
+    text-align: center;
+}
+.sign-gift-bag>div:nth-child(odd){
+    border-right: 0.01rem solid #CCC;
+}
+.sign-gift-bag>div:nth-child(even){
+    border-left: 0.01rem solid #CCC;
+}
+.sign-gift-bag a{
+    color: #fd5353;
+}
+.type-sign,.custom-sign{
+    margin-top: 0.2rem;
+    background: #FFF;
+}
+.sign-tit{
+    height: 0.8rem;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+}
+.type-sign-con>div{
+    float: left;
+    width: 49.8%;
+}
+.type-sign-con>div:nth-child(odd){
+    border-right: 0.01rem solid #FFF;
+}
+.type-sign-con>div:nth-child(even){
+    border-left: 0.01rem solid #FFF;
+}
+.type-sign-con .type-sign-car{
+    height: 2rem;
+    background: #fef3e1;
+    padding: 0.2rem 0;
+}
+.type-sign-car .fund-card{
+    width: 2.8rem;
+    height: 1.85rem;
+    color: #fff357;
+    padding: 0.1rem;
+    margin: 0 auto;
+    background: url("./png/jijinka.png") no-repeat;
+    background-size: 100% 100%;
+}
+.fund-card .fund-card-price{
+    font-size: 0.48rem;
+    text-align: center;
+    margin-top: 0.6rem;
+}
+.fund-card .fund-card-btn{
+    padding: 0 0.1rem;
+}
+.fund-card .fund-card-btn a{
+    font-size: 0.24rem;
+    color: #fff357;
+}
+.fund-card .fund-card-btn a:nth-child(1){
+    float: left;
+}
+.fund-card .fund-card-btn a:nth-child(2){
+    float: right;
+}
+.type-sign-con .center-div{
+    text-align: center;
+}
+.type-sign-con .type-sign-price{
+    font-size: 0.28rem;
+    color: #333;
+    margin-top: 0.1rem;
+}
+.type-sign-details{
+    font-size: 0.2rem;
+    color: #CCC;
+}
+.type-sign-con a.buy-btn{
+    margin: 0.1rem auto;
+}
+.custom-sign .custom-sign-tit{
+    border-bottom: 0.01rem solid #CCC;
+}
+.custom-sign .custom-sign-con{
+    height: 1.5rem;
+}
+.custom-sign-con>div{
+    float: left;
+}
+.custom-sign-con div.custom-sign-details{
+    width: 66%;
+    padding-left: 0.2rem;
+}
+.custom-sign-price{
+    font-size: 0.48rem;
+    color: #333;
+    margin-top: 0.3rem;
+}
+.custom-sign-ly{
+    font-size: 0.2rem;
+    color: #CCC;
+}
+.custom-sign-con div.custom-sign-btn{
+    width: 30%;
+}
+.custom-sign-btn a{
+    margin-top: 0.5rem;
+}
+.section-tab li{
+    float: left;
+    width: 50%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    font-size: 0.28rem;
+    color: #333;
+    background: #FFF;
+    border-bottom: 0.03rem solid #FFF;
+}
+.section-tab li.active-tab{
+    color: #fd5353;
+    border-bottom: 0.03rem solid #fd5353;
+}
+.section-content{
+    background: #FFF;
+}
+.section-cont{
+    margin: 0 0.26rem;
+    height:1.2rem;
+    border-top: 0.01rem solid #F3F3F3;
+}
+.section-cont>div{
+    float: left;
+}
+.section-cont div.tab-con{
+    width: 70%;
+    font-size: 0.22rem;
+    color: #CCC;
+}
+.section-cont div.tab-con div{
+    height: 0.6rem;
+}
+.section-cont div.tab-con div.tab-con-tit{
+    line-height: 0.6rem;
+    font-size: 0.28rem;
+    color: #333;
+}
+.section-cont div.tab-coin{
+    width: 30%;
+    height: 1.2rem;
+    font-size: 0.28rem;
+    line-height: 1.2rem;
+    text-align: right;
+}
+.section-cont div.income-coin{
+    color: #09c500;
+}
+.section-cont div.expend-coin{
+    color: #ff5a00;
+}
+footer{
+    height: 0.8rem;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.24rem;
+}
+.sign-model{
+    position: fixed;
+    top: 35%;
+    left: 0.2rem;
+    width: 6rem;
+    height: 4.2rem;
+    z-index: 1000;
+    background: #FFF;
+    border-radius: 0.3rem;
+    display: none;
+}
+.sign-model div{
+    text-align: center;
+}
+.sign-model-pic{
+    height: 2rem;
+    position: relative;
+}
+.sign-model-pic img{
+    width: 3.6rem;
+    height: 3.3rem;
+    position: absolute;
+    top: -1.6rem;
+    left: 1.2rem;
+}
+.sign-model-con{
+    font-size: 0.24rem;
+    color: #333;
+    margin: 0.1rem 0;
+}
+.sign-model-con span{
+    font-size: 0.36rem;
+    color: #fd5353;
+}
+.sign-model-tip{
+    font-size: 0.2rem;
+    color: #969696;
+}
+.sign-model-btn a{
+    display: block;
+    width: 3rem;
+    height: 0.7rem;
+    text-align: center;
+    line-height: 0.7rem;
+    color: #FFF;
+    background: #fd5353;
+    border-radius: 0.35rem;
+    margin: 0.15rem auto;
+}
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: none;
+}
+.sign-in .mine-fund{
+    height: 3.8rem;
+    background: #fd5353;
+}
+.mine-pic img{
+    display: block;
+    width: 2.7rem;
+    height: 2.2rem;
+    margin: 0 auto;
+}
+.font-div{
+    text-align: center;
+    color: #FFF;
+    margin: 0.1rem 0;
+}
+.total-t{
+    font-size: 0.24rem;
+}
+.price-b{
+    font-size: 0.48rem;
+}
+.look-jump{
+    margin-top: 0.2rem;
+    padding: 0 0.2rem;
+    background: #FFF;
+}
+.look-jump>div{
+    height: 0.9rem;
+    line-height: 0.9rem;
+}
+.look-jump>div:first-child{
+    border-bottom: 0.01rem solid #CCC;
+}
+.look-jump>div span{
+    float: left;
+    width: 50%;
+    text-indent: 0.5rem;
+    font-size: 0.24rem;
+    color: #666666;
+}
+.look-jump>div:first-child span:first-child{
+    background: url("./png/jinbi.png") no-repeat left 0.25rem;
+    -webkit-background-size: 0.4rem 0.4rem;
+    background-size: 0.4rem 0.4rem;: ;
+}
+.look-jump>div:first-child span:last-child{
+    background: url("./png/jinru1.png") no-repeat right 0.25rem;
+    -webkit-background-size: 0.2rem 0.4rem;
+    background-size: 0.2rem 0.4rem;: ;
+}
+.look-jump>div:nth-child(2) span:first-child{
+    background: url("./png/yx.png") no-repeat left 0.25rem;
+    -webkit-background-size: 0.4rem 0.4rem;
+    background-size: 0.4rem 0.4rem;: ;
+}
+.look-jump>div:nth-child(2) span:last-child{
+    background: url("./png/jinru1.png") no-repeat right 0.25rem;
+    -webkit-background-size: 0.2rem 0.4rem;
+    background-size: 0.2rem 0.4rem;: ;
+}
+.mine-fund{
+    background: #FFF;
+}
+.mine-btn{
+    padding: 0.2rem 0;
+}
+.mine-btn>div{
+    float: left;
+    width: 2.4rem;
+    height: 0.45rem;
+    padding: 0 0 0 0.1rem;
+    line-height: 0.45rem;
+    margin: 0 0.34rem;
+    color: #ff7d0f;
+    border: 0.01rem solid #ff7d0f;
+    -webkit-border-radius: 0.22rem;
+    -moz-border-radius: 0.22rem;
+    border-radius: 0.22rem;
+    background: url("./png/jinru.png") no-repeat 2.1rem 0.08rem;
+    background-size: 0.27rem 0.27rem;
+    font-size: 0.25rem;
+}
+.mine-card{
+    padding-top: 0.2rem;
+}
+.mine-card>div{
+    width: 92%;
+    margin: 0 auto;
+    padding: 0.1rem;
+    background: url("./png/bj.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+.mine-card .center-div{
+    color: #fff2c1;
+    text-align: center;
+}
+.mine-card .center-div:first-child{
+    font-size: 0.28rem;
+    margin-top: 0.4rem;
+}
+.mine-card .center-div:nth-child(2){
+    font-size: 0.18rem;
+    margin: 0.1rem 0;
+}
+.mine-card .look-fund{
+    font-size: 0.24rem;
+    color: #FFF;
+    position: absolute;
+    top: 0.15rem;
+    right: 0.15rem;
+}
+ul.mine-steps li{
+    text-align: center;
+    position: relative;
+    float: left;
+    width: 33%;
+    font-size: 0.20rem;
+    color: #fff2c1;
+    padding-bottom: 0.35rem;
+    content: "昨天";
+}
+ul.mine-steps li:before{
+    display: block;
+    width: 0.5rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    border-radius: 0.5rem;
+    color: #fff2c1;
+    text-align: center;
+    margin: 0 auto 0.08rem auto;
+}
+ul.mine-steps li:nth-child(2){
+    margin-top: 0.16rem;
+}
+ul.mine-steps li:nth-child(1):before{
+    content: "昨天";
+}
+ul.mine-steps li:nth-child(2):before{
+    content: " ";
+}
+ul.mine-steps li:nth-child(3):before{
+    content: "明天";
+}
+ul.mine-steps li.mine-steps-active:after {
+    background: #FFF;
+    height: 0.05rem;
+    top: 0.47rem;
+}
+ul.mine-steps li ~ li:after{
+    content: '';
+    width: 99%;
+    height: 1px;
+    background-color: #fff2c1;
+    position: absolute;
+    left: -57%;
+    top: 0.49rem;
+    z-index: 1;
+    margin-left: 0.16rem;
+}
+ul.mine-steps li:nth-child(2) ~ li:after{
+    top: 0.65rem;
+}
+.now-span{
+    font-size: 0.28rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    color: #ff7911;
+    position: absolute;
+    top: 0.05rem;
+    left: 0.6rem;
+    text-align: center;
+    line-height: 0.8rem;
+    background: url("./png/yuan.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 10;
+}
+.no-now-span{
+    font-size: 0.5rem;
+    color: #fff2c1;
+}

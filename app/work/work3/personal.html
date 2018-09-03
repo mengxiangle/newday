@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="block" name="apple-mobile-web-app-status-bar-style">
+    <title>签到基金卡</title>
+    <script type="text/javascript" >
+        (function(designWidth, maxWidth) {
+            var doc = document,
+                win = window;
+            var docEl = doc.documentElement;
+            var tid;
+            var rootItem,rootStyle;
+
+            function refreshRem() {
+                var width = docEl.getBoundingClientRect().width;
+                if (!maxWidth) {
+                    maxWidth = 540;
+                };
+                if (width > maxWidth) {
+                    width = maxWidth;
+                }
+                //rem换算方法1rem=100px
+                var rem = width * 100 / designWidth;
+                //兼容UC开始
+                rootStyle="html{font-size:"+rem+'px !important}';
+                rootItem = document.getElementById('rootsize') || document.createElement("style");
+                if(!document.getElementById('rootsize')){
+                    document.getElementsByTagName("head")[0].appendChild(rootItem);
+                    rootItem.id='rootsize';
+                }
+                if(rootItem.styleSheet){
+                    rootItem.styleSheet.disabled||(rootItem.styleSheet.cssText=rootStyle)
+                }else{
+                    try{rootItem.innerHTML=rootStyle}catch(f){rootItem.innerText=rootStyle}
+                }
+                //兼容UC结束
+                docEl.style.fontSize = rem + "px";
+            };
+            refreshRem();
+
+            win.addEventListener("resize", function() {
+                clearTimeout(tid); //防止执行两次
+                tid = setTimeout(refreshRem, 300);
+            }, false);
+
+            win.addEventListener("pageshow", function(e) {
+                if (e.persisted) { // 浏览器后退的时候重新计算
+                    clearTimeout(tid);
+                    tid = setTimeout(refreshRem, 300);
+                }
+            }, false);
+
+            if (doc.readyState === "complete") {
+                doc.body.style.fontSize = "16px";
+            } else {
+                doc.addEventListener("DOMContentLoaded", function(e) {
+                    doc.body.style.fontSize = "16px";
+                }, false);
+            }
+        })(640, 640);
+        Object.prototype.addListener=function(ev,fn){
+            if (this.attachEvent) {
+                this.attachEvent('on' + ev, fn);
+            }else{
+                this.addEventListener(ev,fn,false);
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <span class="header-back">&nbsp;</span>
+    我的签到基金卡
+</header>
+<div class="sign-in">
+    <div class="sign-in-fund mine-fund">
+        <a href="javascript:;" class="sign-strategy">金币攻略</a>
+        <div class="mine-pic">
+            <img src="./png/jinbi2.png" alt="UU手游">
+        </div>
+        <div class="font-div total-t">共有</div>
+        <div class="font-div price-b">999</div>
+    </div>
+</div>
+<div class="mine-fund">
+    <div class="mine-card">
+        <div>
+            <div class="center-div">我的100元基金卡</div>
+            <div class="center-div">2018-08-30 12:00:00</div>
+            <ul class="mine-steps clear">
+                <li><span class="no-now-span">&#8226;</span><br>未领取</li>
+                <li class="mine-steps-active"><span class="now-span">1000</span><br> <br> 点击领取返还金币</li>
+                <li><span class="no-now-span">&#8226;</span><br>+500</li>
+            </ul>
+            <span class="look-fund">查看</span>
+        </div>
+    </div>
+    <div class="mine-btn clear">
+        <div>一键领取返还金币</div>
+        <div>查看全部签到金币</div>
+    </div>
+</div>
+<div class="look-jump">
+    <div class="clear"><span>查看金币明细</span><span>&nbsp;</span></div>
+    <div class="clear"><span>查看金币游戏</span><span>&nbsp;</span></div>
+</div>
+<footer>
+    有问题请&nbsp;<a href="javascript:;" class="a-link">联系客服</a>
+</footer>
+</body>
+</html>

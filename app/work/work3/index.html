@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="block" name="apple-mobile-web-app-status-bar-style">
+    <title>签到基金卡</title>
+    <script type="text/javascript" >
+        (function(designWidth, maxWidth) {
+            var doc = document,
+                win = window;
+            var docEl = doc.documentElement;
+            var tid;
+            var rootItem,rootStyle;
+
+            function refreshRem() {
+                var width = docEl.getBoundingClientRect().width;
+                if (!maxWidth) {
+                    maxWidth = 540;
+                };
+                if (width > maxWidth) {
+                    width = maxWidth;
+                }
+                //rem换算方法1rem=100px
+                var rem = width * 100 / designWidth;
+                //兼容UC开始
+                rootStyle="html{font-size:"+rem+'px !important}';
+                rootItem = document.getElementById('rootsize') || document.createElement("style");
+                if(!document.getElementById('rootsize')){
+                    document.getElementsByTagName("head")[0].appendChild(rootItem);
+                    rootItem.id='rootsize';
+                }
+                if(rootItem.styleSheet){
+                    rootItem.styleSheet.disabled||(rootItem.styleSheet.cssText=rootStyle)
+                }else{
+                    try{rootItem.innerHTML=rootStyle}catch(f){rootItem.innerText=rootStyle}
+                }
+                //兼容UC结束
+                docEl.style.fontSize = rem + "px";
+            };
+            refreshRem();
+
+            win.addEventListener("resize", function() {
+                clearTimeout(tid); //防止执行两次
+                tid = setTimeout(refreshRem, 300);
+            }, false);
+
+            win.addEventListener("pageshow", function(e) {
+                if (e.persisted) { // 浏览器后退的时候重新计算
+                    clearTimeout(tid);
+                    tid = setTimeout(refreshRem, 300);
+                }
+            }, false);
+
+            if (doc.readyState === "complete") {
+                doc.body.style.fontSize = "16px";
+            } else {
+                doc.addEventListener("DOMContentLoaded", function(e) {
+                    doc.body.style.fontSize = "16px";
+                }, false);
+            }
+        })(640, 640);
+        Object.prototype.addListener=function(ev,fn){
+            if (this.attachEvent) {
+                this.attachEvent('on' + ev, fn);
+            }else{
+                this.addEventListener(ev,fn,false);
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <span class="header-back">&nbsp;</span>
+    签到基金卡
+    <span class="header-mine">我的</span>
+</header>
+<div class="sign-in">
+    <div class="sign-in-fund">
+        <span class="sign-in-yue">368</span>
+        <a href="javascript:;" class="sign-btn" id="SignIn">
+            <img src="./png/baoxiang.png" alt="UU手游">
+            签到
+        </a>
+        <a href="javascript:;" class="sign-strategy">金币攻略</a>
+    </div>
+    <div class="sign-in-step">
+        <ul class="sign-in-steps clear">
+            <li>50</li>
+            <li>60</li>
+            <li>70</li>
+            <li>80</li>
+            <li class="sign-steps-active">90</li>
+            <li>100</li>
+            <li>神秘礼包</li>
+        </ul>
+        <div class="sign-gift-bag clear">
+            <div>再签2天就可领神秘礼包</div>
+            <div><a href="javascript:;">神秘礼包&nbsp;&gt;</a></div>
+        </div>
+    </div>
+</div>
+<div class="type-sign">
+    <div class="sign-tit">
+        直接购买签到基金卡每天都可领取额外赠送的金币
+    </div>
+    <div class="type-sign-con clear">
+        <div>
+            <div class="type-sign-car">
+                <div class="fund-card">
+                    <div class="fund-card-price">&#165;<span>500</span></div>
+                    <div class="fund-card-btn clear"><a href="javascript:;">基金卡</a><a href="javascript:;">查看</a></div>
+                </div>
+            </div>
+            <div class="type-sign-price center-div"><span class="price">500元</span>签到基金卡</div>
+            <div class="type-sign-details center-div">获得金币500+返还500</div>
+            <div class="type-sign-btn center-div"><a href="javascript:;" class="buy-btn">立即购买</a></div>
+        </div>
+        <div>
+            <div class="type-sign-car">
+                <div class="fund-card">
+                    <div class="fund-card-price">&#165;<span>1000</span></div>
+                    <div class="fund-card-btn clear"><a href="javascript:;">基金卡</a><a href="javascript:;">查看</a></div>
+                </div>
+            </div>
+            <div class="type-sign-price center-div"><span class="price">1000元</span>签到基金卡</div>
+            <div class="type-sign-details center-div">获得金币1000+返还1000</div>
+            <div class="type-sign-btn center-div"><a href="javascript:;" class="buy-btn">立即购买</a></div>
+        </div>
+    </div>
+</div>
+<div class="custom-sign">
+    <div class="custom-sign-tit sign-tit">
+        自定义签到基金卡面值
+    </div>
+    <div class="custom-sign-con clear">
+        <div class="custom-sign-details">
+            <div class="custom-sign-price">&#165;50000</div>
+            <div class="custom-sign-ly">获得金币50000+返还50000&nbsp;<a href="javascript:;" class="a-link">查看详情</a></div>
+        </div>
+        <div class="custom-sign-btn">
+            <a href="javascript:;" class="buy-btn">立即购买</a>
+        </div>
+    </div>
+</div>
+<footer>
+    有问题请&nbsp;<a href="javascript:;" class="a-link">联系客服</a>
+</footer>
+<div class="sign-model" id="Model">
+    <div class="sign-model-pic">
+        <img src="./png/success.png" alt="UU手游">
+    </div>
+    <div class="sign-model-con">恭喜获得<span>50</span>个金币的奖励</div>
+    <div class="sign-model-tip">金币已发放到您账户</div>
+    <div class="sign-model-btn"><a href="javascript:;" id="SureBtn">知道了</a></div>
+</div>
+<div class="mask" id="Mask"></div>
+</body>
+<script>
+    var _SignBtn = document.getElementById("SignIn");
+    var _Model = document.getElementById("Model");
+    var _Mask = document.getElementById("Mask");
+    var _SureBtn = document.getElementById("SureBtn");
+    // 签到
+    _SignBtn.addListener('click',function () {
+        _Model.style.display = 'block';
+        _Mask.style.display = 'block';
+    });
+    //  关闭签到
+    _SureBtn.addListener('click',function () {
+        _Model.style.display = 'none';
+        _Mask.style.display = 'none';
+    });
+
+</script>
+</html>
